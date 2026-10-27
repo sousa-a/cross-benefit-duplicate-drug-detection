@@ -20,6 +20,8 @@ Identifying these duplicates for classes of drugs is non-trivial for some reason
 
 A naive matcher that joins on `member_id + HCPCS code + date window` finds only part of true duplicates. It misses  biosimilar substitutions, Q-code billing gaps, and new formulation launches, exactly the scenarios with the highest per-unit cost.
 
+![Cross Benefit Duplicate Drug Billing](figures/logic_flow_claim_building.png)
+
 ---
 
 ## Approach
