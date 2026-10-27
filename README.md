@@ -20,8 +20,6 @@ Identifying these duplicates for classes of drugs is non-trivial for some reason
 
 A naive matcher that joins on `member_id + HCPCS code + date window` finds only part of true duplicates. It misses  biosimilar substitutions, Q-code billing gaps, and new formulation launches, exactly the scenarios with the highest per-unit cost.
 
-![Cross Benefit Duplicate Drug Billing](figures/logic_flow_claim_building.png)
-
 ---
 
 ## Approach
@@ -133,6 +131,8 @@ Claims are generated with a dose-first methodology that uses `administered_hcpcs
 NPI co-location is seeded using a `md5(member_id) % 5` hash to assign buy-and-bill providers, the same hash produces the same provider assignment in both NB02 and NB03 without shared state between notebooks.
 
 Six molecules across four therapeutic areas were selected: pembrolizumab, bevacizumab, ocrelizumab, infliximab, aflibercept and ranibizumab.
+
+![Cross Benefit Duplicate Drug Billing](figures/logic_flow_claim_building.png)
 
 ---
 
